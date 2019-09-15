@@ -29,7 +29,7 @@ node{
   
   stage('Build')
  {
-  sh  "${mavenHome}/bin/mvn clean package"
+  mvn clean package
  }
 
   
