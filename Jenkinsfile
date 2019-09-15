@@ -19,7 +19,7 @@ node{
     ])
   ])
 
-  def mavenHome=tool name: "mavenv3.6.1", type: "maven"
+  def mavenHome=/opt/apache-maven-3.6.1/
   
   
    stage('version')
