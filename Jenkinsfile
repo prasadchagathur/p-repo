@@ -34,6 +34,10 @@ node{
  {
   sh "${mavenHome}/bin/mvn clean package"
  }
-
+stage('DeplotoTomcat'){
+     
+     sh "cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.24/webapps/"
+   
+  }
   
 }
