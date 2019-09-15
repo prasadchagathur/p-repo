@@ -45,31 +45,33 @@ node{
        bat 'mvn test'   
       }
    }
- */
+ 
 
  stage('SonarQubeReport')
  {
   sh  "${mavenHome}/bin/mvn sonar:sonar"
  }
+ */
 
   stage('UploadArtifactsIntoNexus')
  {
   sh  "${mavenHome}/bin/mvn deploy"
  }
- /*
+ 
  stage('DeplotoTomcat'){
      
      sh "cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.16/webapps/"
  }
- */
-
+ 
+/*
 stage('DeploytoTomcat'){
 
    sshagent(['9554f0b8-eda0-486d-9d23-ce7585c32f70']) 
    {
      sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.70.188:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
    }
-}
+} */
+  /*
  stage('EmailNotification'){
     mail to: 'devopstrainingblr@gmail.com',
          bcc: 'devopstrainingblr@gmail.com', 
@@ -87,4 +89,5 @@ stage('DeploytoTomcat'){
  stage("SlackNotification"){
      slackSend baseUrl: 'https://devops-team-bangalore.slack.com/services/hooks/jenkins-ci/', channel: 'build-notification', message: 'Build done through', tokenCredentialId: '12797dc5-eb70-4f19-8e05-8c07bc58d79d'
  }
+ */
 }
