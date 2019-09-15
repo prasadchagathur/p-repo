@@ -19,9 +19,12 @@ node{
     ])
   ])
 
+  def mavenHome=tool name: "mavenv3.6.1", type: "maven"
+  
+  
    stage('version')
   {
-    sh "mvn --version"
+    sh "${mavenHome}/bin/mvn --version"
   }
   
   
