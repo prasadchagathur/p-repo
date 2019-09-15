@@ -26,7 +26,10 @@ node{
   {
     sh "${mavenHome}/bin/mvn --version"
   }
-  
+  stage('checkout')
+  {
+    checkout scm
+  }
   stage('Build')
  {
   sh "${mavenHome}/bin/mvn clean package"
