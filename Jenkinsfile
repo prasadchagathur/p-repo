@@ -18,8 +18,13 @@ node{
         pollSCM('* * * * *')
     ])
   ])
+
+   stage('version')
+  {
+    sh "mvn --version"
+  }
   
-  def mavenHome=tool name: "mavenv3.6.1", type: "maven"
+  /* def mavenHome=tool name: "mavenv3.6.1", type: "maven"
     
   stage('CheckouttheCode') {
    git branch: 'master', credentialsId: 'f777808d-e3c4-4456-a527-90f7bdda0e9b', url: 'https://github.com/prasadchagathur/p-repo.git'  
@@ -29,10 +34,7 @@ node{
      checkout scm
   }
   */
- stage('version')
-  {
-    sh "mvn --version"
-  }
+
  stage('Build')
  {
   sh  "${mavenHome}/bin/mvn clean package"
@@ -65,6 +67,8 @@ node{
  stage('DeplotoTomcat'){
      
      sh "cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.16/webapps/"
+   
+   
  }
  
 /*
@@ -94,4 +98,5 @@ stage('DeploytoTomcat'){
      slackSend baseUrl: 'https://devops-team-bangalore.slack.com/services/hooks/jenkins-ci/', channel: 'build-notification', message: 'Build done through', tokenCredentialId: '12797dc5-eb70-4f19-8e05-8c07bc58d79d'
  }
  */
+  */
 }
