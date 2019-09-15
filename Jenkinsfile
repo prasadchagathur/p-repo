@@ -29,7 +29,10 @@ node{
      checkout scm
   }
   */
- 
+ stage('version')
+  {
+    sh "mvn --version"
+  }
  stage('Build')
  {
   sh  "${mavenHome}/bin/mvn clean package"
@@ -53,10 +56,11 @@ node{
  }
  */
 
-  stage('UploadArtifactsIntoNexus')
+/*  stage('UploadArtifactsIntoNexus')
  {
   sh  "${mavenHome}/bin/mvn deploy"
  }
+ */
  
  stage('DeplotoTomcat'){
      
