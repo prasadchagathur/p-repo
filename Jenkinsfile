@@ -28,7 +28,7 @@ node{
   }
   stage('checkout')
   {
-    checkout scm
+    git branch: 'master', credentialsId: 'f777808d-e3c4-4456-a527-90f7bdda0e9b', url: 'https://github.com/prasadchagathur/p-repo.git'  
   }
   stage('Build')
  {
