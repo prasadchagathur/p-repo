@@ -24,7 +24,8 @@ node{
     sh "mvn --version"
   }
   
-  /* def mavenHome=tool name: "mavenv3.6.1", type: "maven"
+  /* 
+  def mavenHome=tool name: "mavenv3.6.1", type: "maven"
     
   stage('CheckouttheCode') {
    git branch: 'master', credentialsId: 'f777808d-e3c4-4456-a527-90f7bdda0e9b', url: 'https://github.com/prasadchagathur/p-repo.git'  
@@ -34,7 +35,7 @@ node{
      checkout scm
   }
   */
-
+/*
  stage('Build')
  {
   sh  "${mavenHome}/bin/mvn clean package"
@@ -63,7 +64,7 @@ node{
   sh  "${mavenHome}/bin/mvn deploy"
  }
  */
- 
+ /*
  stage('DeplotoTomcat'){
      
      sh "cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.16/webapps/"
@@ -99,4 +100,5 @@ stage('DeploytoTomcat'){
  }
  */
   */
+  
 }
