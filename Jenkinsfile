@@ -19,10 +19,10 @@ node{
     ])
   ])
   
-  def mavenHome=tool name: "mavenv3.1.1.1", type: "maven"
+  def mavenHome=tool name: "mavenv3.6.1", type: "maven"
     
   stage('CheckouttheCode') {
-   git branch: 'master', credentialsId: '4d6512c4-c101-4f43-aac5-5860f5d9e20c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'  
+   git branch: 'master', credentialsId: 'f777808d-e3c4-4456-a527-90f7bdda0e9b', url: 'https://github.com/prasadchagathur/p-repo.git'  
  }
   /*
    stage('Checkout'){
