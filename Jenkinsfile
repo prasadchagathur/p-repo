@@ -20,11 +20,11 @@ node{
   ])
 
  
-  
+  def mavenHome="/opt/apache-maven-3.6.1"
   
    stage('version')
   {
-    sh "/opt/apache-maven-3.6.1//bin/mvn --version"
+    sh "${mavenHome}/bin/mvn --version"
   }
   
   
